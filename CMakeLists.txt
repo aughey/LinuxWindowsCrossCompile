@@ -8,22 +8,11 @@ project (HELLO)
 #SET(CMAKE_CROSSCOMPILING 1)
 #add_definitions(WIN32 1)
 
-# for windows
-add_link_options(-static -static-libgcc -static-libstdc++)
+if(CMAKE_C_COMPILER MATCHES "mingw32")
+    # for windows
+    message(STATUS "Adding static compile flags for windows")
+    add_link_options(-static -static-libgcc -static-libstdc++)
+endif()
 
-# Create a library called "Hello" which includes the source file "hello.cxx".
-# The extension is already found. Any number of sources could be listed here.
-add_library (Hello Hello.cpp)
-
-# Make sure the compiler can find include files for our Hello library
-# when other libraries or executables link to Hello
-target_include_directories (Hello PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-
-# Add executable called "helloDemo" that is built from the source files
-# "demo.cxx" and "demo_b.cxx". The extensions are automatically found.
-add_executable (helloDemo hello_world.cpp Hello.cpp)
-
-# Link the executable to the Hello library. Since the Hello library has
-# public include directories we will use those link directories when building
-# helloDemo
-target_link_libraries (helloDemo LINK_PUBLIC Hello)
+add_subdirectory(src/lib)
+add_subdirectory(src/app)
