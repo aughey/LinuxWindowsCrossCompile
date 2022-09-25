@@ -3,5 +3,10 @@
 
 void Hello::SayHello()
 {
-    std::cout << "Hello, World!" << std::endl;
+    std::cout << HelloString() << std::endl;
+}
+
+std::string Hello::HelloString()
+{
+    return "Hello, World!";
 }
