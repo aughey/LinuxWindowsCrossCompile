@@ -40,3 +40,8 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C ${{env.BUILD_TYPE}}
       
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v3
+      with:
+        name: WindowsExe
+        path: build/helloDemo.exe
