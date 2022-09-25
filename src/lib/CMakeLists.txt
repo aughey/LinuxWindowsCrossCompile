@@ -4,6 +4,9 @@
 cmake_minimum_required (VERSION 3.18.0)
 project (HELLOlib)
 
+FILE(GLOB SOURCES *.cpp)
+
+
 # Create a library called "Hello" which includes the source file "hello.cxx".
 # The extension is already found. Any number of sources could be listed here.
-add_library (Hello Hello.cpp)
+add_library (Hello ${SOURCES})

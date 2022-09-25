@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-TEST(HelloTest, BasicAssertions) {
+TEST(ExampleTests, BasicAssertions) {
     EXPECT_STRNE("hello","world");
     EXPECT_STRNE("hello","helloasd");
     EXPECT_STREQ("hello","hello");
