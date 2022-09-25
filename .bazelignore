@@ -1,1 +1,3 @@
 bazel-LinuxWindowsCrossCompile
+bazel-bin
+bazel-out

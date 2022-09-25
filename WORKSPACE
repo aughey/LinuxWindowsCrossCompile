@@ -6,10 +6,12 @@ http_archive(
   strip_prefix = "googletest-609281088cfefc76f9d0ce82e1ff6c30cc3591e5",
 )
 
-load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-git_repository(
-    name = "platformio_rules",
-    remote = "http://github.com/mum4k/platformio_rules.git",
-    tag = "v0.0.9",
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+http_archive(
+    name = "rules_python",
+    sha256 = "8c8fe44ef0a9afc256d1e75ad5f448bb59b81aba149b8958f02f7b3a98f5d9b4",
+    strip_prefix = "rules_python-0.13.0",
+    url = "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.13.0.tar.gz",
 )

@@ -13,6 +13,13 @@ endif()
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
 
+
+
+add_subdirectory(src/lib)
+add_subdirectory(src/app)
+
+if(CMAKE_C_COMPILER MATCHES "mingw32")
+else()
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -24,7 +31,5 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 enable_testing()
-
-add_subdirectory(src/lib)
-add_subdirectory(src/app)
 add_subdirectory(src/tests)
+endif()
