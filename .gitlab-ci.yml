@@ -21,7 +21,8 @@ stages:          # List of stages for jobs, and their order of execution
   - build
   - artifact
 
-setup:
+setup-job:
+  stage: setup
   script:
     - apt-get install -y cmake mingw-w64
 
