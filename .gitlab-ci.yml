@@ -28,7 +28,7 @@ build-job:       # This job runs in the build stage, which runs first.
   stage: build
   script:
     - apt update
-    - apt install -y --no-install-recommends build-essential cmake mingw-w64 ninja-build
+    - apt install -y --no-install-recommends git build-essential cmake mingw-w64 ninja-build
     - sh run-build.sh
 
 artifact-job:      # This job runs in the deploy stage.
