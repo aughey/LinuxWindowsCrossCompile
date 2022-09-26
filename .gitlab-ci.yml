@@ -36,4 +36,5 @@ artifact-job:      # This job runs in the deploy stage.
   script:
     - sh copy-artifacts.sh
   artifacts:
-    paths: artifacts
+    paths: 
+      - artifacts
