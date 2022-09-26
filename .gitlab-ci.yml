@@ -24,15 +24,11 @@ stages:          # List of stages for jobs, and their order of execution
   - build
   - artifact
 
-setup-job:
-  stage: setup
-  script:
-    - apt update
-    - apt install -y cmake mingw-w64
-
 build-job:       # This job runs in the build stage, which runs first.
   stage: build
   script:
+    - apt update
+    - apt install -y cmake mingw-w64
     - sh run-build.sh
 
 artifact-job:      # This job runs in the deploy stage.
