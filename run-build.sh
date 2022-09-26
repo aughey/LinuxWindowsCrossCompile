@@ -2,6 +2,9 @@ ROOT=`pwd`
 WINDOWS_DIR=$ROOT/build_windows
 LINUX_DIR=$ROOT/build_linux
 
+# For gitlab (right now)
+export GIT_SSL_NO_VERIFY=1
+
 rm -rf $WINDOWS_DIR $LINUX_DIR
 mkdir $WINDOWS_DIR
 mkdir $LINUX_DIR
