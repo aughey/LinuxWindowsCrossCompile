@@ -21,7 +21,7 @@ cmake --no-warn-unused-cli \
     -S$ROOT \
     -B$WINDOWS_DIR -G Ninja
 
-cmake --build $WINDOWS_DIR --config Release --target all --
+cmake --build $WINDOWS_DIR --config Release --target all --verbose --
 
 if [ $? -ne 0 ]; then
     echo "Windows Build failed"
@@ -40,7 +40,7 @@ cmake --no-warn-unused-cli \
     -S$ROOT \
     -B$LINUX_DIR -G Ninja
 
-cmake --build $LINUX_DIR --config Release --target all --
+cmake --build $LINUX_DIR --config Release --target all --verbose --
 
 if [ $? -ne 0 ]; then
     echo "Windows Build failed"
